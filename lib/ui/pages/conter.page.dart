@@ -1,22 +1,23 @@
 import 'package:flutter/material.dart';
 
 class ConterPage extends StatefulWidget {
-
-
   @override
   State<ConterPage> createState() => _ConterPageState();
 }
 
 class _ConterPageState extends State<ConterPage> {
-  int conter = 0 ;
+  int conter = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("conter"),),
+      appBar: AppBar(
+        title: const Text("Compteur"), // Correction de l'orthographe
+      ),
       body: Center(
-        child: Text("conter Value ${conter}",
-        style: TextStyle(fontSize: 22,color: Colors.deepOrange),
+        child: Text(
+          "Valeur du compteur: $conter", // Amélioration de la phrase
+          style: const TextStyle(fontSize: 22, color: Colors.deepOrange), // Ajout de const
         ),
       ),
       floatingActionButton: Row(
@@ -25,24 +26,24 @@ class _ConterPageState extends State<ConterPage> {
           FloatingActionButton(
             onPressed: () {
               setState(() {
-                --conter;
+                conter--; // Utilisation de l'opérateur de décrémentation
               });
               print(conter);
             },
-            child: Icon(Icons.remove),
+            child: const Icon(Icons.remove), // Ajout de const
           ),
-          SizedBox(width: 8,),
+          const SizedBox(width: 8), // Ajout de const
           FloatingActionButton(
             onPressed: () {
               setState(() {
-                ++conter;
+                conter++; // Utilisation de l'opérateur d'incrémentation
               });
               print(conter);
             },
-            child: Icon(Icons.add),
+            child: const Icon(Icons.add), // Ajout de const
           ),
         ],
-      )
+      ),
     );
   }
 }

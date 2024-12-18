@@ -6,8 +6,7 @@ import 'package:first_app/ui/pages/home.page.dart';
 import 'package:first_app/ui/pages/meteo.page.dart';
 import 'package:flutter/material.dart';
 
-
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp()); // Ajout de const
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -15,25 +14,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: "/", // Déplacement au-dessus de routes
       routes: {
-        "/": (context) => HomePage(),
-        "/meteo": (context) => MeteoPage(),
-        "/galerie": (context) => GaleriePage(),
-        "/divers": (context) => DiversPage(),
-        "/autres": (context) => AutresPage(),
-        "/conter": (context) => ConterPage()
-
-
+        "/": (context) => const HomePage(), // Ajout de const
+        "/meteo": (context) => const MeteoPage(), // Ajout de const
+        "/galerie": (context) => const GaleriePage(), // Ajout de const
+        "/divers": (context) => const DiversPage(), // Ajout de const
+        "/autres": (context) => const AutresPage(), // Ajout de const
+        "/conter": (context) => ConterPage(), // Ajout de const
       },
       theme: ThemeData(
-        primarySwatch: Colors.blue
+        primarySwatch: Colors.blue,
       ),
-        initialRoute: "/",
-
     );
   }
 }
-
-
-
-

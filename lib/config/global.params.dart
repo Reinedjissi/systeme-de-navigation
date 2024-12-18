@@ -9,12 +9,12 @@ class GlobalParams {
       "route": "/conter"
     },
     {
-      "title": "meteo",
+      "title": "Météo",
       "icon": Icon(Icons.camera, color: Colors.orange),
       "route": "/meteo"
     },
     {
-      "title": "galerie",
+      "title": "Galerie",
       "icon": Icon(Icons.map, color: Colors.orange),
       "route": "/galerie"
     }

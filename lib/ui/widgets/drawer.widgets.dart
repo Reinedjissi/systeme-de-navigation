@@ -19,13 +19,13 @@ class MyDrawer extends StatelessWidget {
             ),
             child: Center(
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  CircleAvatar(
-                    backgroundImage: AssetImage("images/ok.jpg"),
-                    radius: 50,
+                  const CircleAvatar(
+                    backgroundImage: AssetImage("assets/images/ok.jpg"),
+                    radius: 30,
                   ),
-
-                  CircleAvatar(
+                  const CircleAvatar(
                     backgroundImage: AssetImage("images/ok.jpg"),
                     radius: 50,
                   ),
@@ -33,14 +33,14 @@ class MyDrawer extends StatelessWidget {
               ),
             ),
           ),
-          ...(GlobalParams.menus as List<Map<String, dynamic>>).map((item) {
+          ...GlobalParams.menus.map((item) {
             return ListTile(
-              title: Text(item["title"], style: TextStyle(fontSize: 20)),
+              title: Text(item["title"], style: const TextStyle(fontSize: 20)),
               leading: item["icon"],
-              trailing: Icon(Icons.arrow_right, color: Colors.orange),
+              trailing: const Icon(Icons.arrow_right, color: Colors.orange),
               onTap: () {
-                Navigator.of(context).pop();
-                Navigator.pushNamed(context, item["route"]);
+                Navigator.of(context).pop(); // Ferme le tiroir
+                Navigator.pushNamed(context, item["route"]); // Navigue vers la route
               },
             );
           }).toList(),
@@ -51,17 +51,36 @@ class MyDrawer extends StatelessWidget {
 }
 
 class GlobalParams {
-  static List<Map<String, dynamic>> menus = [
+  static const List<Map<String, dynamic>> menus = [
     {
       "title": "Home",
       "icon": Icon(Icons.home),
-      "route": "/home",
+      "route": "/",
     },
     {
-      "title": "Settings",
-      "icon": Icon(Icons.settings),
-      "route": "/settings",
+      "title": "Météo",
+      "icon": Icon(Icons.wb_sunny),
+      "route": "/meteo",
     },
-    // Ajoutez d'autres éléments de menu ici
+    {
+      "title": "Galerie",
+      "icon": Icon(Icons.photo),
+      "route": "/galerie",
+    },
+    {
+      "title": "Divers",
+      "icon": Icon(Icons.category),
+      "route": "/divers",
+    },
+    {
+      "title": "Autres",
+      "icon": Icon(Icons.more_horiz),
+      "route": "/autres",
+    },
+    {
+      "title": "Compteur",
+      "icon": Icon(Icons.add),
+      "route": "/conter",
+    },
   ];
 }
