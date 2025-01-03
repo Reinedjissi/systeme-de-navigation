@@ -7,7 +7,13 @@ class MeteoPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("METEO"), // Ajout de const pour l'optimisation
+        backgroundColor: Colors.deepOrange,
+        title: const Text("METEO"),
+        actions: [
+          Icon(Icons.account_circle),
+          Icon(Icons.output_outlined ),
+        ],
+        // Ajout de const pour l'optimisation
       ),
       body: Center(
         child: Text(

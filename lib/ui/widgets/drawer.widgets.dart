@@ -22,11 +22,11 @@ class MyDrawer extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const CircleAvatar(
-                    backgroundImage: AssetImage("assets/images/ok.jpg"),
+                    backgroundImage: AssetImage("assets/images/telecharger.jpg"),
                     radius: 30,
                   ),
                   const CircleAvatar(
-                    backgroundImage: AssetImage("images/ok.jpg"),
+                    backgroundImage: AssetImage("assets/images/logo.jpeg"),
                     radius: 50,
                   ),
                 ],

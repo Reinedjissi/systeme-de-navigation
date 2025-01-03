@@ -1,22 +1,27 @@
 import 'package:flutter/material.dart';
 
-class ConterPage extends StatefulWidget {
+class CounterPage extends StatefulWidget {
   @override
-  State<ConterPage> createState() => _ConterPageState();
+  State<CounterPage> createState() => _CounterPageState();
 }
 
-class _ConterPageState extends State<ConterPage> {
-  int conter = 0;
+class _CounterPageState extends State<CounterPage> {
+  int counter = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          Icon(Icons.account_circle),
+          Icon(Icons.output_outlined)
+        ],
+        backgroundColor: Colors.deepOrange,
         title: const Text("Compteur"), // Correction de l'orthographe
       ),
       body: Center(
         child: Text(
-          "Valeur du compteur: $conter", // Amélioration de la phrase
+          "Valeur du compteur: $counter", // Amélioration de la phrase
           style: const TextStyle(fontSize: 22, color: Colors.deepOrange), // Ajout de const
         ),
       ),
@@ -26,9 +31,9 @@ class _ConterPageState extends State<ConterPage> {
           FloatingActionButton(
             onPressed: () {
               setState(() {
-                conter--; // Utilisation de l'opérateur de décrémentation
+                counter--; // Utilisation de l'opérateur de décrémentation
               });
-              print(conter);
+              print(counter);
             },
             child: const Icon(Icons.remove), // Ajout de const
           ),
@@ -36,9 +41,9 @@ class _ConterPageState extends State<ConterPage> {
           FloatingActionButton(
             onPressed: () {
               setState(() {
-                conter++; // Utilisation de l'opérateur d'incrémentation
+                counter++; // Utilisation de l'opérateur d'incrémentation
               });
-              print(conter);
+              print(counter);
             },
             child: const Icon(Icons.add), // Ajout de const
           ),

@@ -9,6 +9,11 @@ class DiversPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        actions: [
+          Icon(Icons.account_circle),
+          Icon(Icons.output_outlined)
+        ],
+        backgroundColor: Colors.deepOrange,
         title: const Text("DIVERS"), // Ajout de const pour l'optimisation
       ),
       body: Center(

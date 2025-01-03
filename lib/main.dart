@@ -1,5 +1,5 @@
 import 'package:first_app/ui/pages/autres.page.dart';
-import 'package:first_app/ui/pages/conter.page.dart';
+import 'package:first_app/ui/pages/counter.page.dart';
 import 'package:first_app/ui/pages/divers.page.dart';
 import 'package:first_app/ui/pages/galerie.page.dart';
 import 'package:first_app/ui/pages/home.page.dart';
@@ -21,11 +21,11 @@ class MyApp extends StatelessWidget {
         "/galerie": (context) => const GaleriePage(), // Ajout de const
         "/divers": (context) => const DiversPage(), // Ajout de const
         "/autres": (context) => const AutresPage(), // Ajout de const
-        "/conter": (context) => ConterPage(), // Ajout de const
+        "/conter": (context) => CounterPage(), // Ajout de const
       },
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      //theme: ThemeData(
+        //primarySwatch: Colors.blue,
+      //),
     );
   }
 }
